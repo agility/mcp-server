@@ -1,0 +1,35 @@
+Agility CMS MCP Server
+Copyright 2026 Agility CMS
+
+Licensed under the Apache License, Version 2.0 (the "License"). You may obtain a
+copy of the License in the LICENSE file distributed with this work, or at
+http://www.apache.org/licenses/LICENSE-2.0
+
+--------------------------------------------------------------------------------
+TRADEMARKS
+--------------------------------------------------------------------------------
+
+"Agility", "Agility CMS", the Agility logo, and Agility product names are
+trademarks of Agility CMS. Section 6 of the License grants no rights to use
+them, and nothing in this NOTICE grants any.
+
+Concretely, the License permits you to fork, modify and redistribute this code.
+It does not permit you to:
+
+  - describe a fork or derivative work as an official Agility CMS product, or
+    imply that Agility CMS endorses or supports it;
+  - use the Agility name or marks in the name of a derived MCP server, package,
+    service or domain;
+  - claim the "com.agilitycms" MCP Registry namespace, which is DNS-verified to
+    agilitycms.com, or present another deployment as https://mcp.agilitycms.com.
+
+--------------------------------------------------------------------------------
+THE HOSTED SERVICE IS NOT COVERED BY THIS LICENSE
+--------------------------------------------------------------------------------
+
+This License covers the source code in this repository.
+
+The Agility CMS MCP Server hosted at https://mcp.agilitycms.com is a service
+operated by Agility CMS and provided under Agility's own terms of service. Your
+use of that service, and of the Agility CMS Management API it calls, is governed
+by those terms and by your Agility subscription — not by this License.
