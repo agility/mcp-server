@@ -43,7 +43,7 @@ with your Agility account, and your assistant can work with the instances you al
 | **Cursor** | One-click badge above, or Settings → **MCP** → **Add new MCP server** → **HTTP** |
 | **LM Studio** | One-click badge above |
 | **Claude Code** | `claude mcp add --transport http "Agility-CMS" https://mcp.agilitycms.com/api/mcp` |
-| **Claude** (desktop & web) | Settings → **Connectors** → **Add custom connector** → paste the endpoint |
+| **Claude** (desktop & web) | **Official connector** — Customize → **Connectors** → **Discover** → search *Agility CMS* → **Connect** |
 | **Windsurf** | Settings → **Cascade** → **MCP servers** → add the endpoint |
 | **Gemini CLI** | `gemini mcp add --transport http agility-cms https://mcp.agilitycms.com/api/mcp` |
 | **ChatGPT** | Settings → **Apps & Connectors** → **Advanced → Developer mode** → add a connector |
@@ -62,7 +62,22 @@ claude mcp add --transport http "Agility-CMS" https://mcp.agilitycms.com/api/mcp
 
 ### Claude (desktop & web)
 
-Settings → Connectors → **Add custom connector**, then paste the endpoint:
+Agility CMS is an **official connector** in Claude's directory, so there is nothing to paste.
+
+**On your own account** — Customize → Connectors → **Discover**, search for *Agility CMS*, and hit
+**Connect**, then sign in to Agility when prompted. Or go straight to the entry:
+<https://claude.ai/customize/connectors/directory?q=Agility%20CMS>
+
+Pick **Agility CMS**. *Agility CMS Knowledgebase* is a separate connector for the documentation site
+and is marked `Custom`.
+
+**Administering a Team or Enterprise workspace** — enable the *Agility CMS* connector for the
+organization from your admin settings. That makes it available to everyone, but it connects nobody:
+each member still signs in to Agility themselves, and their own Agility permissions govern every
+call. There is no shared or service credential.
+
+**If the directory entry has not reached you yet**, the endpoint still works on its own —
+Customize → Connectors → **Add**, then add it as a custom connector:
 
 ```
 https://mcp.agilitycms.com/api/mcp
