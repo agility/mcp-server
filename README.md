@@ -8,7 +8,7 @@ already have access to — through conversation, not APIs.
 ![Hosted — nothing to install](https://img.shields.io/badge/hosted-nothing%20to%20install-0EA5E9?style=flat-square)
 ![Transport: streamable HTTP](https://img.shields.io/badge/transport-streamable%20HTTP-111827?style=flat-square)
 ![Auth: OAuth 2.0](https://img.shields.io/badge/auth-OAuth%202.0-16A34A?style=flat-square)
-![32 tools](https://img.shields.io/badge/tools-32-F59E0B?style=flat-square)
+![33 tools](https://img.shields.io/badge/tools-33-F59E0B?style=flat-square)
 [![License: Apache 2.0](https://img.shields.io/badge/license-Apache%202.0-64748B?style=flat-square)](LICENSE)
 
 [Connect your client](#connect-your-client) · [What you can ask for](#what-you-can-ask-for) ·
@@ -189,6 +189,7 @@ instances first and it will use the right one from then on.
 - *"Build a Team Member model — name, photo, bio, and a link to their posts — and a container for it."*
 - *"Create a blog post in `en-us` from this outline and give me the editor link."*
 - *"Which pages in the main channel are still unpublished?"*
+- *"Find everything that mentions the spring sale, and open the newest blog post."*
 - *"Publish the three posts I just created."*
 
 ---
@@ -224,12 +225,13 @@ opt-out on the hosted server; self-host without `APP_INSIGHTS_CONNECTION_STRING`
 
 ## Available MCP Tools
 
-The Agility CMS MCP Server provides **32 powerful tools** organized into categories:
+The Agility CMS MCP Server provides **33 powerful tools** organized into categories:
 
 ### 🔍 Discovery Tools
 - `get_available_instances` - List all Agility CMS instances you have access to
 - `get_current_user` - Identify the user the current token authenticates as (read-only whoami)
 - `get_containers` - Access content containers organized by category
+- `search_instance` - Search an instance's content, pages, components, assets, models and containers by text or ID
 
 ### 📋 Model Listing Tools
 - `get_content_models` - Retrieve all content models for an instance
