@@ -235,11 +235,11 @@ The Agility CMS MCP Server provides **33 powerful tools** organized into categor
 
 ### 📋 Model Listing Tools
 - `get_content_models` - Retrieve all content models for an instance
-- `get_component_models` - Access page component models
+- `get_component_models` - Access page component models, with each component's thumbnail URL when it has one
 
 ### 🔍 Detail Tools
 - `get_content_model_details` - Get detailed field definitions for a content model
-- `get_component_model_details` - Get detailed field definitions for a component model
+- `get_component_model_details` - Get detailed field definitions for a component model, and its thumbnail (a picture of what the component looks like on a page)
 
 ### 📝 Content Management Tools
 - `get_locales` - Retrieve available locales for multilingual content
