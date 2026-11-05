@@ -205,8 +205,9 @@ anything you personally can't do, so the server cannot exceed the access you alr
 that the practical way to limit what an assistant can reach is to sign in as an Agility user that only
 has the access you're willing to give it.
 
-**Destructive actions are marked and prompted.** The `delete_*`, `unpublish_content` and
-`unpublish_page` tools carry `destructiveHint: true`, so interactive clients ask before running them.
+**Actions that overwrite data or change the live site are marked.** The save tools,
+`reorder_page_modules`, `delete_*`, `publish_*` and `unpublish_*` carry `destructiveHint: true`, so
+interactive clients can ask before running them.
 Non-interactive clients don't prompt at all — they require each write tool to be allow-listed instead.
 
 **Treat content as untrusted input.** This is structural to MCP, not specific to Agility: an assistant
@@ -274,7 +275,7 @@ The Agility CMS MCP Server provides **33 powerful tools** organized into categor
 - `save_component_model` - Create or update component models
 - `save_container` - Create and configure content containers
 
-> **🔒 Destructive actions are marked.** The `delete_*` tools and the `unpublish_content` / `unpublish_page` tools carry `destructiveHint: true`, so interactive MCP clients prompt before running them ("Allow this tool to run?" — choosing **"always allow"** opts out). Publish and the approval workflow are additive/reversible and are **not** flagged destructive. See [Data and security](#data-and-security) for how permissions and prompting work, and the [documentation](https://mcp.agilitycms.com/tools) for the per-tool detail.
+> **🔒 Destructive actions are marked.** The save tools, `reorder_page_modules`, `delete_*`, `publish_content` / `publish_page` and `unpublish_content` / `unpublish_page` carry `destructiveHint: true`, so interactive MCP clients prompt before running them ("Allow this tool to run?" — choosing **"always allow"** opts out). Publishing is marked because it replaces what the live site serves. The approval workflow (approve, decline, request approval) changes nothing live and is **not** flagged destructive. See [Data and security](#data-and-security) for how permissions and prompting work, and the [documentation](https://mcp.agilitycms.com/tools) for the per-tool detail.
 
 **📚 Full tool documentation and examples:** [mcp.agilitycms.com/tools](https://mcp.agilitycms.com/tools)
 
