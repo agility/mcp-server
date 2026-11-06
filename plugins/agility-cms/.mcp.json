@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "agility-cms": {
+      "type": "http",
+      "url": "https://mcp.agilitycms.com/api/mcp"
+    },
+    "agility-knowledgebase": {
+      "type": "http",
+      "url": "https://docs.agilitycms.com/docs/api/mcp"
+    }
+  }
+}

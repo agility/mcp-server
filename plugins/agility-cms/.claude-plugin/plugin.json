@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "agility-cms",
+  "displayName": "Agility CMS",
+  "version": "1.0.0",
+  "description": "Find, write, publish and model content in Agility CMS, build pages, and wire up front ends, using the official Agility CMS MCP server and your own Agility account permissions.",
+  "author": {
+    "name": "Agility CMS",
+    "email": "support@agilitycms.com",
+    "url": "https://agilitycms.com"
+  },
+  "homepage": "https://mcp.agilitycms.com",
+  "repository": "https://github.com/agility/mcp-server",
+  "license": "Apache-2.0",
+  "keywords": ["cms", "headless-cms", "content", "agility", "seo", "localization"],
+  "icon": "./assets/agility-icon.svg",
+  "documentationUrl": "https://mcp.agilitycms.com",
+  "supportUrl": "https://agilitycms.com/docs/support",
+  "privacyPolicyUrl": "https://agilitycms.com/privacy-policy",
+  "termsOfServiceUrl": "https://agilitycms.com/customer-agreement"
+}

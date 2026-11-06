@@ -20,7 +20,7 @@ with your Agility account, and your assistant can work with the instances you al
 
 - **Endpoint:** `https://mcp.agilitycms.com/api/mcp` (streamable HTTP)
 - **Auth:** OAuth 2.0 against your Agility organization — your Agility permissions are the authority
-- **Tools:** 32, covering content, models, components, containers, pages, sitemaps and media
+- **Tools:** 33, covering content, models, components, containers, pages, sitemaps and media
 - **Setup guide with screenshots:** [mcp.agilitycms.com/instructions](https://mcp.agilitycms.com/instructions)
 - **Live tool catalog:** [mcp.agilitycms.com/tools](https://mcp.agilitycms.com/tools)
 
@@ -321,7 +321,19 @@ Still stuck: [support@agilitycms.com](mailto:support@agilitycms.com) or
 ## About this repository
 
 This repository is the public home of the **Agility CMS MCP Server** — the documentation, the licence
-and the security policy for the hosted service at `https://mcp.agilitycms.com`.
+and the security policy for the hosted service at `https://mcp.agilitycms.com` — and of the
+**Agility CMS plugin for Claude**.
+
+### The Claude plugin
+
+[`plugins/agility-cms`](plugins/agility-cms/README.md) bundles the MCP server with skills for
+writing and editing content, building pages, publishing, content modeling and front-end development.
+Install it in Claude Code:
+
+```bash
+claude plugin marketplace add agility/mcp-server
+claude plugin install agility-cms@agility
+```
 
 The server is a hosted, remote MCP server: there is nothing to install and no package to pull, so
 there is no build to reproduce here. Its source is maintained by Agility CMS and is not currently

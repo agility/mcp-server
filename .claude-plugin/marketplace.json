@@ -1,0 +1,15 @@
+{
+  "name": "agility",
+  "owner": {
+    "name": "Agility CMS",
+    "email": "support@agilitycms.com"
+  },
+  "description": "Official Agility CMS plugins",
+  "plugins": [
+    {
+      "name": "agility-cms",
+      "source": "./plugins/agility-cms",
+      "description": "Find, write, publish and model content in Agility CMS, build pages, and wire up front ends, using the official Agility CMS MCP server and your own Agility account permissions."
+    }
+  ]
+}
