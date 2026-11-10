@@ -34,6 +34,8 @@ with your Agility account, and your assistant can work with the instances you al
 [![Install in VS Code Insiders](https://img.shields.io/badge/Install%20in-VS%20Code%20Insiders-24B47E?style=for-the-badge&logo=visual-studio-code&logoColor=white)](https://insiders.vscode.dev/redirect/mcp/install?name=agility-cms&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fmcp.agilitycms.com%2Fapi%2Fmcp%22%7D&quality=insiders)
 [![Install in Cursor](https://img.shields.io/badge/Install%20in-Cursor-000000?style=for-the-badge&logo=cursor&logoColor=white)](https://cursor.com/en/install-mcp?name=agility-cms&config=eyJ1cmwiOiJodHRwczovL21jcC5hZ2lsaXR5Y21zLmNvbS9hcGkvbWNwIn0%3D)
 [![Install in LM Studio](https://img.shields.io/badge/Install%20in-LM%20Studio-4F46E5?style=for-the-badge)](https://lmstudio.ai/install-mcp?name=agility-cms&config=eyJ1cmwiOiJodHRwczovL21jcC5hZ2lsaXR5Y21zLmNvbS9hcGkvbWNwIn0%3D)
+[![Add to ChatGPT](https://img.shields.io/badge/Add%20to-ChatGPT-10A37F?style=for-the-badge)](https://chatgpt.com/settings/plugins-settings/plugin_asdk_app_6a67c713303881918a19fde42b09777f)
+[![Add to Claude](https://img.shields.io/badge/Add%20to-Claude-D97757?style=for-the-badge)](https://claude.com/marketplace/connectors/agility-cms)
 
 ### Every supported client
 
@@ -44,13 +46,18 @@ with your Agility account, and your assistant can work with the instances you al
 | **LM Studio** | One-click badge above |
 | **Claude Code** | `claude mcp add --transport http "Agility-CMS" https://mcp.agilitycms.com/api/mcp` |
 | **Claude** (desktop & web) | **Official connector** — Customize → **Connectors** → **Discover** → search *Agility CMS* → **Connect** |
+| **Claude plugin** (connector + skills) | `claude plugin marketplace add agility/mcp-server` then `claude plugin install agility-cms@agility` |
+| **ChatGPT** | **[Agility CMS in ChatGPT's plugin directory](https://chatgpt.com/settings/plugins-settings/plugin_asdk_app_6a67c713303881918a19fde42b09777f)** — add it and sign in |
+| **Microsoft 365 Copilot** | Coming soon — in Microsoft's review |
+| **Codex** | `codex mcp add agility-cms --url https://mcp.agilitycms.com/api/mcp` then `codex mcp login agility-cms` |
+| **Goose** | Settings → **Extensions** → add a remote (streamable HTTP) extension with the endpoint |
 | **Windsurf** | Settings → **Cascade** → **MCP servers** → add the endpoint |
 | **Gemini CLI** | `gemini mcp add --transport http agility-cms https://mcp.agilitycms.com/api/mcp` |
-| **ChatGPT** | Settings → **Apps & Connectors** → **Advanced → Developer mode** → add a connector |
 | **Anything else** | Any client that speaks streamable HTTP — or bridge a stdio-only client with [`mcp-remote`](#anything-else) |
 
-Full walkthroughs with screenshots are at
-[mcp.agilitycms.com/instructions](https://mcp.agilitycms.com/instructions). To wire anything up by
+Full walkthroughs are at
+[mcp.agilitycms.com/instructions](https://mcp.agilitycms.com/instructions), and rolling it out to a
+whole team is covered under [For your organization](#for-your-organization). To wire anything up by
 hand, the only value you need is the endpoint. Details per client follow.
 
 
@@ -64,9 +71,10 @@ claude mcp add --transport http "Agility-CMS" https://mcp.agilitycms.com/api/mcp
 
 Agility CMS is an **official connector** in Claude's directory, so there is nothing to paste.
 
-**On your own account** — Customize → Connectors → **Discover**, search for *Agility CMS*, and hit
-**Connect**, then sign in to Agility when prompted. Or go straight to the entry:
-<https://claude.ai/customize/connectors/directory?q=Agility%20CMS>
+**On your own account** — open the listing,
+<https://claude.com/marketplace/connectors/agility-cms>, or inside Claude go to Customize →
+Connectors → **Discover**, search for *Agility CMS*, and hit **Connect**. Then sign in to Agility
+when prompted.
 
 Pick **Agility CMS**. *Agility CMS Knowledgebase* is a separate connector for the documentation site
 and is marked `Custom`.
@@ -81,6 +89,16 @@ Customize → Connectors → **Add**, then add it as a custom connector:
 
 ```
 https://mcp.agilitycms.com/api/mcp
+```
+
+**The Agility CMS plugin** bundles the connector with nine skills (getting started, editing content,
+writing an article, brand voice, publishing and workflow, building pages, content modeling, a
+go-live check and building a front end) and the Agility documentation server. It's published from
+[agility/mcp-server](https://github.com/agility/mcp-server). In Claude Code:
+
+```bash
+claude plugin marketplace add agility/mcp-server
+claude plugin install agility-cms@agility
 ```
 
 ### VS Code (GitHub Copilot)
@@ -150,8 +168,30 @@ Or in `~/.gemini/settings.json`:
 
 ### ChatGPT
 
-Settings → **Apps & Connectors** → **Advanced → Developer mode**, then add a connector with the
-endpoint above.
+Agility CMS is in ChatGPT's plugin directory:
+<https://chatgpt.com/settings/plugins-settings/plugin_asdk_app_6a67c713303881918a19fde42b09777f>. Add it, then sign
+in to Agility when prompted. On a Business, Enterprise or Edu workspace your admin may need to
+enable it first.
+
+If the plugin isn't available to you, turn on **Settings → Apps → Advanced settings → Developer
+mode**, then **Create** an app with the endpoint above and OAuth.
+
+### Microsoft 365 Copilot
+
+Coming soon. Agility CMS for Microsoft 365 Copilot is in Microsoft's review.
+
+### Codex
+
+```bash
+codex mcp add agility-cms --url https://mcp.agilitycms.com/api/mcp
+codex mcp login agility-cms
+```
+
+### Goose
+
+Use the one-click link on [the setup page](https://mcp.agilitycms.com/instructions), or add a remote
+(streamable HTTP) extension with the endpoint above. Goose opens the Agility sign-in the first time it
+connects.
 
 ### Anything else
 
@@ -175,6 +215,42 @@ If a client only supports local (stdio) servers, bridge to it with
 That bridge is a general-purpose client-side shim, not an Agility package. **There is no
 `agility-mcp-server` npm package and there won't be one** — a hosted HTTP server has nothing to
 install, so if you find a config telling you to `npx` something Agility-named, it's wrong.
+
+### For your organization
+
+An admin can make Agility CMS available to everyone, or install it for them. None of these grants
+content access by itself: every person still signs in to Agility once, and their own Agility
+permissions decide what the assistant can see and change. There is no shared or service credential.
+
+- **Claude Team and Enterprise:** an Owner adds **Agility CMS** under **Organization settings →
+  Connectors**. To install the plugin for everyone, go to **Organization settings → Plugins &
+  skills → Add → Sync from GitHub**, enter `agility/mcp-server`, and set its default access to
+  *Available to install*, *Installed by default* or *Required* (per group on Enterprise). The
+  connector still has to be added under Connectors.
+- **Claude Code:** push the plugin with managed settings (Organization settings → Claude Code →
+  Managed settings, or `managed-settings.json` from your device-management tool), or put the same
+  keys in a checked-in `.claude/settings.json`:
+
+  ```json
+  {
+    "extraKnownMarketplaces": {
+      "agility": { "source": { "source": "github", "repo": "agility/mcp-server" } }
+    },
+    "enabledPlugins": { "agility-cms@agility": true }
+  }
+  ```
+- **ChatGPT Business, Enterprise and Edu:** a workspace admin opens **Workspace settings →
+  Plugins**, finds **Agility CMS**, and sets its installation policy to *Available* or *Installed*,
+  workspace-wide or per role (Enterprise and Edu). The Agility CMS app must be enabled under
+  **Workspace settings → Apps** too.
+- **Microsoft 365 Copilot (coming soon):** once approved, a Microsoft 365 admin turns it on under
+  **Copilot → Connectors** in the admin center and rolls it out to everyone or to chosen users and
+  groups.
+- **VS Code and GitHub Copilot:** check the [VS Code config](#vs-code-github-copilot) into a
+  repository as `.vscode/mcp.json`. GitHub Enterprise admins who restrict MCP servers can allow
+  `https://mcp.agilitycms.com/*`, or use the GitHub MCP Registry, where Agility CMS is listed.
+- **Cursor:** check the [Cursor config](#cursor) into a repository as `.cursor/mcp.json`. Enterprise
+  admins using Cursor's MCP allowlist can allow `https://mcp.agilitycms.com/*`.
 
 ---
 
