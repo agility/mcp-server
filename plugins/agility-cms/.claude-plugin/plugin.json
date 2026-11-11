@@ -2,7 +2,7 @@
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "agility-cms",
   "displayName": "Agility CMS",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Find, write, publish and model content in Agility CMS, build pages, and wire up front ends, using the official Agility CMS MCP server and your own Agility account permissions.",
   "author": {
     "name": "Agility CMS",
