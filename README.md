@@ -8,7 +8,7 @@ already have access to — through conversation, not APIs.
 ![Hosted — nothing to install](https://img.shields.io/badge/hosted-nothing%20to%20install-0EA5E9?style=flat-square)
 ![Transport: streamable HTTP](https://img.shields.io/badge/transport-streamable%20HTTP-111827?style=flat-square)
 ![Auth: OAuth 2.0](https://img.shields.io/badge/auth-OAuth%202.0-16A34A?style=flat-square)
-![33 tools](https://img.shields.io/badge/tools-33-F59E0B?style=flat-square)
+![34 tools](https://img.shields.io/badge/tools-34-F59E0B?style=flat-square)
 [![License: Apache 2.0](https://img.shields.io/badge/license-Apache%202.0-64748B?style=flat-square)](LICENSE)
 
 [Connect your client](#connect-your-client) · [What you can ask for](#what-you-can-ask-for) ·
@@ -302,7 +302,7 @@ opt-out on the hosted server; self-host without `APP_INSIGHTS_CONNECTION_STRING`
 
 ## Available MCP Tools
 
-The Agility CMS MCP Server provides **33 powerful tools** organized into categories:
+The Agility CMS MCP Server provides **34 powerful tools** organized into categories:
 
 ### 🔍 Discovery Tools
 - `get_available_instances` - List all Agility CMS instances you have access to
@@ -316,7 +316,7 @@ The Agility CMS MCP Server provides **33 powerful tools** organized into categor
 
 ### 🔍 Detail Tools
 - `get_content_model_details` - Get detailed field definitions for a content model
-- `get_component_model_details` - Get detailed field definitions for a component model, and its thumbnail (a picture of what the component looks like on a page)
+- `get_component_model_details` - Get detailed field definitions for a component model, its thumbnail (a picture of what the component looks like on a page), and its agent guidance
 
 ### 📝 Content Management Tools
 - `get_locales` - Retrieve available locales for multilingual content
@@ -349,6 +349,7 @@ The Agility CMS MCP Server provides **33 powerful tools** organized into categor
 ### ⚡ Model Creation & Management Tools
 - `save_content_model` - Create or update content models
 - `save_component_model` - Create or update component models
+- `save_model_guidance` - Tell agents when to choose a component or content model (use when, avoid when, alternatives, placement), or deprecate one *(destructive: replaces stored guidance)*
 - `save_container` - Create and configure content containers
 
 > **🔒 Destructive actions are marked.** The save tools, `reorder_page_modules`, `delete_*`, `publish_content` / `publish_page` and `unpublish_content` / `unpublish_page` carry `destructiveHint: true`, so interactive MCP clients prompt before running them ("Allow this tool to run?" — choosing **"always allow"** opts out). Publishing is marked because it replaces what the live site serves. The approval workflow (approve, decline, request approval) changes nothing live and is **not** flagged destructive. See [Data and security](#data-and-security) for how permissions and prompting work, and the [documentation](https://mcp.agilitycms.com/tools) for the per-tool detail.
